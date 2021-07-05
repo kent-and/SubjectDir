@@ -1,5 +1,4 @@
-
-
+import os 
 from dolfin import *
 import SubjectDir as subjd  
 import meshio 
@@ -41,7 +40,7 @@ def run_simulation(input_dir, input_files_dict, output_dir, output_files_dict, p
 
 
 
-sd = subjd.SubjectDir("../../tmp/DataLocker")
+sd = subjd.SubjectDir(os.environ["SUBJECTS_DIR"])
 
 print (dir(sd))
 input_files_dict = {"Mesh16.mesh" : "Mesh16.mesh", "Mesh32.mesh": "Mesh32.mesh"}

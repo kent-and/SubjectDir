@@ -1,9 +1,8 @@
 
-
+import os
 import SubjectDir as subjd  
 
 def create_stl(input_dir, input_files_dict, output_dir, output_files_dict, parameter_dict):
-    import os  
     lh_pial = input_dir  + "/" + input_files_dict["lh.pial"]
     lh_stl  = output_dir + "/" + output_files_dict["lh.stl"]
     print ("mris_convert %s %s"% (lh_pial, lh_stl))   
@@ -43,8 +42,7 @@ def create_mesh(input_dir, input_files_dict, output_dir, output_files_dict, para
 
 
 
-sd = subjd.SubjectDir("../../tmp/DataLocker")
-print (dir(sd))
+sd = subjd.SubjectDir(os.environ["SUBJECTS_DIR"])
 input_files_dict = {"lh.pial" : "lh.pial", "rh.pial" : "rh.pial"}
 output_files_dict = {"lh.stl" : "lh.stl", "rh.stl" : "rh.stl"}
 parameter_dict = { }

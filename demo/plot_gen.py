@@ -1,3 +1,4 @@
+import os
 import pyvista as pv 
 import SubjectDir as subjd  
 
@@ -15,8 +16,7 @@ def gen_pngs(input_dir, input_files_dict, output_dir, output_files_dict, paramet
     plotter.screenshot(output_dir + "/" + output_files_dict["u.png"])
 
 
-sd = subjd.SubjectDir("../../tmp/DataLocker")
-print (dir(sd))
+sd = subjd.SubjectDir(os.environ["SUBJECTS_DIR"])
 input_files_dict = {"u.pvd" : "u000000.vtu"}
 output_files_dict = {"u.png" : "u.png"}
 parameter_dict = { }
